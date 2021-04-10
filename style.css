@@ -1,0 +1,181 @@
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Reset
+*  2.0 - Fonts
+*  3.0 - Color Palette
+*  4.0 - Body
+*    4.1 - Header
+*    4.2 - Section signup-form
+*  5.0 - Footer
+*  6.0 - Media Queries
+*/
+
+/*** 1.0 - Reset ***/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/*** 2.0 - Fonts ***/
+body {
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+
+nav,
+button {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/*** 3.0 - Color Palette ***/
+:root {
+  /* CTA text */
+  --primary-light-red: hsl(356, 100%, 66%);
+  /* CTA hover backgrund */
+  --primary-very-light-red: hsl(355, 100%, 74%);
+  /* Headings */
+  --primary-very-dark-blue: hsl(208, 49%, 24%);
+  /* Footer text */
+  --neutral-grayish-blue: hsl(240, 2%, 79%);
+  /* Body copy */
+  --neutral-very-dark-grayish-blue: hsl(207, 13%, 34%);
+  /* Footer background */
+  --neutral-very-dark-black-blue: hsl(240, 10%, 16%);
+}
+
+/*** 4.0 - Body ***/
+.wrapper {
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  /* grid-template-rows: 35em 100em 20em; */
+  grid-template-areas:
+    '. header .'
+    '. main .'
+    '. footer .';
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0.2em;
+}
+
+main {
+  grid-area: main;
+}
+
+/*** 4.1 - Header ***/
+header {
+  grid-area: header;
+  background: linear-gradient(
+    90deg,
+    hsl(13, 100%, 72%),
+    hsl(353, 100%, 62%)
+  );
+  border-radius: 0 0 0 50px;
+  min-height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-top: 5em;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left > button::after {
+  content: url(./images/icon-arrow-light.svg);
+  margin-left: 0.3em;
+}
+
+.nav-left > *,
+.nav-right > * {
+  margin: 0 1em;
+}
+
+.nav-left > button > ul {
+  display: none;
+}
+
+.logo {
+  width: 6rem;
+  margin: 0 4em 0 0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.signup-btn {
+  margin-right: 0;
+  padding: 0.8em 2.5em;
+  background-color: white;
+  color: var(--primary-light-red);
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 7em 0 3em 0;
+}
+
+.header-content p {
+  font-size: 1.35rem;
+}
+
+.header-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10em;
+}
+
+.header-btn * {
+  margin: 0 1em;
+  padding: 0.8em 1.5em;
+  border: 1px solid white;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+.start-for-free-btn {
+  padding: 0.8em 1em;
+  background-color: white;
+  color: var(--primary-light-red);
+}
+
+/*** 5.0 - Footer ***/
+footer {
+  grid-area: footer;
+}
+
+.site-links {
+  display: flex;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*** 6.0 - Media Queries ***/
