@@ -108,6 +108,16 @@ nav {
   font-weight: 700;
 }
 
+.signup-btn::after {
+  display: none;
+}
+
+.signup-btn:hover,
+.start-for-free-btn:hover {
+  color: white;
+  background-color: var(--primary-very-light-red);
+}
+
 /*** 4.2 - Header Content ***/
 header {
   padding-top: 3em;
@@ -145,7 +155,6 @@ header p {
 .learn-more-btn {
   margin: 0 1em;
   padding: 0.8em 1.5em;
-  border: 1px solid white;
   border-radius: 25px;
   font-weight: 700;
 }
@@ -154,6 +163,15 @@ header p {
   padding: 0.8em 1em;
   background-color: white;
   color: var(--primary-light-red);
+}
+
+.learn-more-btn {
+  border: 1px solid white;
+}
+
+.learn-more-btn:hover {
+  color: var(--primary-very-light-red);
+  background-color: white;
 }
 
 /*** 5.0 - Main ***/
@@ -272,9 +290,13 @@ footer .logo {
   padding-bottom: 1.75em;
 }
 
-.footer-list li {
-  line-height: 2.25rem;
+.footer-list li:not(:first-child) {
+  margin: 1em 0;
   cursor: pointer;
+}
+
+.footer-list li:hover:not(:first-child) {
+  text-decoration: underline;
 }
 
 .attribution {
@@ -283,6 +305,10 @@ footer .logo {
 }
 .attribution a {
   color: inherit;
+}
+
+.attribution a:hover {
+  color: white;
 }
 
 /*** 7.0 - Media Queries ***/
