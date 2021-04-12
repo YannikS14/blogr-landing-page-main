@@ -85,18 +85,45 @@ nav {
   margin-right: 0em;
 }
 
-.nav-wrapper button::after {
+.nav-items button::after {
   content: url(./images/icon-arrow-light.svg);
   margin-left: 0.3em;
-}
-
-.nav-wrapper ul {
-  display: none;
 }
 
 .nav-items {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.nav-list {
+  display: none;
+  position: absolute;
+  width: 150px;
+  top: 50px;
+  padding: 1em;
+  background-color: white;
+  color: var(--neutral-very-dark-black-blue);
+  font-weight: 300;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list:nth-child(2) {
+  right: 22%;
+}
+
+.nav-list:last-child {
+  right: -13%;
+}
+
+.nav-list li {
+  cursor: pointer;
+  margin: 1em 0;
+}
+
+.nav-list li:hover {
+  font-weight: 600;
 }
 
 .signup-btn {
@@ -106,10 +133,6 @@ nav {
   color: var(--primary-light-red);
   border-radius: 25px;
   font-weight: 700;
-}
-
-.signup-btn::after {
-  display: none;
 }
 
 .signup-btn:hover,
