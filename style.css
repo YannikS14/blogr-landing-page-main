@@ -161,6 +161,10 @@ nav {
   background-color: var(--primary-very-light-red);
 }
 
+.hamburger {
+  display: none;
+}
+
 /*** 4.2 - Header Content ***/
 header {
   padding-top: 3em;
@@ -176,7 +180,7 @@ header > article {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 9.5em 0;
+  padding: 9.5em 2em;
 }
 
 h1 {
@@ -192,17 +196,18 @@ header p {
   display: flex;
   justify-content: center;
   margin-top: 3em;
+  width: 100%;
 }
 
 .start-for-free-btn,
 .learn-more-btn {
-  margin: 0 1em;
   padding: 0.8em 1.5em;
   border-radius: 25px;
   font-weight: 700;
 }
 
 .start-for-free-btn {
+  margin-right: 2em;
   padding: 0.8em 1em;
   background-color: white;
   color: var(--primary-light-red);
@@ -235,6 +240,10 @@ h3 {
 
 .text-wrapper {
   margin: 0 10vw;
+}
+
+.mobile {
+  display: none;
 }
 
 .text-wrapper article {
@@ -277,6 +286,7 @@ h3 {
   position: absolute;
   top: -70px;
   left: 100px;
+  max-width: 100%;
 }
 
 .section-2 .text-wrapper,
@@ -355,3 +365,201 @@ footer .logo {
 }
 
 /*** 7.0 - Media Queries ***/
+@media screen and (max-width: 1250px) {
+  html {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  main p {
+    padding: 1em 0 2em 0;
+  }
+
+  .section-1 h2 {
+    margin-bottom: 1.5em;
+  }
+
+  .mobile {
+    display: block;
+    margin-bottom: 3em;
+    max-width: 100%;
+  }
+
+  .text-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-wrapper article {
+    max-width: 100%;
+  }
+
+  .section-1 {
+    padding: 7em 0 10em 0;
+    background: none;
+  }
+
+  .section-2 .text-wrapper,
+  .section-3 .text-wrapper {
+    align-items: center;
+  }
+
+  .section-2 h2 {
+    width: unset;
+  }
+
+  .phones {
+    position: unset;
+    margin-top: -14em;
+  }
+
+  .section-3 {
+    background: none;
+    padding: 3em 0;
+  }
+
+  .section-3 .text-wrapper {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    margin: 0 3vw;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  header p {
+    font-size: 1.125rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0 1 50%;
+  }
+
+  .hamburger img {
+    cursor: pointer;
+  }
+
+  .nav-wrapper {
+    display: none;
+    flex: 0 1 100%;
+    flex-direction: column;
+    margin-top: 2em;
+    background-color: white;
+    color: var(--primary-very-dark-blue);
+    font-size: 1.125rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 30px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-wrapper.active {
+    display: flex;
+  }
+
+  .nav-wrapper button {
+    margin: 0;
+  }
+
+  .nav-items {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--neutral-grayish-blue);
+  }
+
+  .nav-items button {
+    padding: 1em 0;
+  }
+
+  .login-signup-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+  }
+
+  .nav-wrapper .login-btn {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  .signup-btn {
+    background-color: var(--primary-light-red);
+    color: white;
+    border-radius: 50px;
+  }
+
+  .nav-btn:hover,
+  .nav-btn:focus,
+  .login-btn:hover {
+    text-decoration: none;
+    color: var(--neutral-very-dark-grayish-blue);
+  }
+
+  .nav-btn::after {
+    content: url(./images/icon-arrow-dark.svg);
+    position: unset;
+  }
+
+  .nav-list {
+    position: unset;
+    width: 100%;
+    text-align: center;
+    color: var(--neutral-very-dark-grayish-blue);
+    background-color: hsl(240, 1%, 94%);
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-list li {
+    margin: 1.5em 0;
+  }
+
+  .start-for-free-btn,
+  .learn-more-btn {
+    padding: 0.8em 0.5em;
+  }
+
+  .start-for-free-btn {
+    margin-right: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .site-links {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-links .logo {
+    margin-bottom: 2.5em;
+  }
+
+  .footer-list-wrapper {
+    flex-direction: column;
+  }
+
+  .footer-list {
+    margin-bottom: 2em;
+  }
+
+  .footer-list li:first-child {
+    padding-bottom: 1em;
+  }
+
+  .footer-list li:not(:first-child) {
+    margin: 0.5em 0;
+  }
+}

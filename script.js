@@ -30,3 +30,9 @@ const removeActiveClass = () => {
     el.classList.remove('active');
   });
 };
+
+const hamburgerMenu = document.querySelector('.hamburger > img');
+hamburgerMenu.addEventListener('click', (event) => {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  navWrapper.classList.toggle('active');
+});
